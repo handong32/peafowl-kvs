@@ -130,6 +130,7 @@ static conn *listen_conn = NULL;
 static int max_fds;
 //static struct event_base *main_base;
 struct event_base *main_base;
+struct peafowl_settings peafowl;
 
 enum transmit_result {
     TRANSMIT_COMPLETE,   /** All done writing. */

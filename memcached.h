@@ -1,5 +1,8 @@
 /* -*- Mode: C; tab-width: 4; c-basic-offset: 4; indent-tabs-mode: nil -*- */
 
+#ifndef MEMCACHED_H
+#define MEMCACHED_H
+
 /** \file
  * The main memcached header holding commonly used data
  * structures and function prototypes.
@@ -661,7 +664,9 @@ struct peafowl_settings {
     int destination_worker;                 /* the  worker that will accept guest connections */
     bool transferring_epoch;                /* if true, a connection is being transferred. Over this period Peafowl stops scheduling*/
     bool update_scale_down_worker;           /* we stop the scale_down worker if we already know which thread is the scale_down worker */
-} peafowl;
+};
+
+extern struct peafowl_settings peafowl;
 
 /**
  * Response objects
@@ -1055,3 +1060,5 @@ extern void drop_worker_privileges(void);
 
 #define likely(x)       __builtin_expect((x),1)
 #define unlikely(x)     __builtin_expect((x),0)
+
+#endif
